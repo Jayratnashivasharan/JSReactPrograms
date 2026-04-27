@@ -1,0 +1,48 @@
+State in React:
+State is a container to store data like variables
+This is mutable and dynamic.
+We have to import it when if we want to use it.
+It re-render component automatically  so that data can visible on UI.
+
+State in React:
+import {useState} from "react";
+function App(){
+	const [Fruits , setFruits]= useState{"Apple"};
+	const handleFruits=()=>{
+	setFruits="Banana";
+}
+return (
+<div>
+	<h1>{Fruits}</h1>
+	<button onclick={handleFruits}>Change Fruit Name </button>
+</div>
+);
+}
+
+
+
+ Set Variable:
+import {useState} from "react";
+function App(){
+const [name, setName]=useState("Honey");
+const [age,setAge]=useState("22");
+return (
+	<div>
+		<h2>{name}-{age}</h2>
+		<button onclick={()=>setAge(age+1)}>Increase Age</button>
+	</div>
+)
+}
+
+Using Object:
+import {useState} from "react";
+function Profile(){
+const [user,setUSer]=useState({oname:"Honey",oage:22});
+return (
+<div>
+	<h2>{user.oname}</h2>
+	<button onclick={()=>setUser({user,age:user.age+1})}>
+	Increase Age </button>
+</div>
+)
+}
