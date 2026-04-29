@@ -46,3 +46,21 @@ return (
 </div>
 )
 }
+
+
+Form-Controlled component
+Submission and Validatiton
+
+1.
+function MyFrom(){
+	const[name,setName]=useStaste(" ");
+	return(
+		<div>
+		<h2>Controlled component</h2>
+		<input type="text value="{name}"
+		onclick={(e)=>setName(e.target.value)}
+		
+		<p>Your Name:{name}</p>
+		</div>
+	)
+}
