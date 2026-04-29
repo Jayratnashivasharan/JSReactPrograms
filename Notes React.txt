@@ -64,3 +64,35 @@ function MyFrom(){
 		</div>
 	)
 }
+
+
+2.From Submission
+
+function Myform1{
+	const[sname,setName]=useState(" ");
+	const handleSubmit=(event)=>{
+		event.preventDefault();
+		alert("From Submitted "+name);
+	}
+	return(
+		<Form onSubmit={handleSubmit}>
+		<h2>Form Submission</h2>
+		<input type="text" value="{name}"
+		onclick={(e)=>setName(e.target.value)}>
+		<button type="Submit">Submit</button>
+		</Form>
+
+	);
+}
+
+function MyFrom2(){
+	const[mname,setName]=useStaste("");
+	function handleSubmit1(e){
+		e.preventDefault();
+		if(mname===1" "){
+			alert("Please Enter Name);
+		}
+		else{
+			alert("Submitted "+mname);
+		}
+}

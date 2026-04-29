@@ -8,6 +8,8 @@ function App() {
   const [fname] = useState("Honey");
   const [fage, setFAge] = useState(22);
   const [inputName, setInputName] = useState("");
+  const [sName, setName] = useState("");
+  const [mname, setMname] = useState("");
 
   // ButtonClick
   function showMsg() {
@@ -23,6 +25,21 @@ function App() {
   function handleSubmit(event) {
     event.preventDefault();
     alert("Form Submitted");
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    alert("Form Submitted " + sName);
+  }
+
+  function handleSubmit1(event) {
+    event.preventDefault();
+
+    if (mname.trim() === "") {
+      alert("Please Enter Name");
+    } else {
+      alert("Submitted " + mname);
+    }
   }
 
   const handleFruits = () => {
@@ -47,6 +64,26 @@ function App() {
 
       <form onSubmit={handleSubmit}>
         <button type="submit">Submit</button>
+      </form>
+
+      <form onSubmit={handleFormSubmit}>
+        <h2>Form Submission</h2>
+        <input
+          type="text"
+          value={sName}
+          onChange={(event) => setName(event.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+
+      <form onSubmit={handleSubmit1}>
+        <h2>Name Validation</h2>
+        <input
+          type="text"
+          value={mname}
+          onChange={(event) => setMname(event.target.value)}
+        />
+        <button type="submit">Submit Name</button>
       </form>
 
       <Profile />
